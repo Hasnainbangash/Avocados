@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AvocadosView: View {
+    // MARK: - PROPERTIES
+    
+    // MARK: - BODY
     var body: some View {
         VStack {
             Spacer()
@@ -48,6 +51,8 @@ struct AvocadosView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+// MARK: - PREVIEW
 
 #Preview {
     AvocadosView()
