@@ -9,7 +9,33 @@ import SwiftUI
 
 struct AppView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            AvocadosView()
+                .tabItem {
+                    Image("tabicon-branch")
+                    Text("Avocados")
+                }
+            
+            ContentView()
+                .tabItem {
+                    Image("tabicon-book")
+                    Text("Recipes")
+                }
+            
+            RipeningStagesView()
+                .tabItem {
+                    Image("tabicon-avocado")
+                    Text("Ripening")
+                }
+            
+            AvocadosView()
+                .tabItem {
+                    Image("tabicon-settings")
+                    Text("Settings")
+                }
+        } //: TAB
+        .edgesIgnoringSafeArea(.top)
+        .accentColor(Color.primary)
     }
 }
 
