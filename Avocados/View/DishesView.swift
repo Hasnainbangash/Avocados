@@ -9,9 +9,9 @@ import SwiftUI
 
 struct DishesView: View {
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 4) {
             // 1st Column
-            VStack {
+            VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Image("icon-toasts")
                         .resizable()
@@ -45,12 +45,14 @@ struct DishesView: View {
                 } //: HSTACK
             } //: VSTACK
             
-            VStack {
+            // 2nd Column
+            VStack(alignment: .center, spacing: 16) {
                 HStack {
                     Divider()
                 } //: HSTACK
                 
                 Image(systemName: "heart.circle")
+                    .font(Font.title.weight(.ultraLight))
                     .imageScale(.large)
                 
                 HStack {
@@ -59,7 +61,7 @@ struct DishesView: View {
             } //: VSTACK
             
             // 3rd Column
-            VStack {
+            VStack(alignment: .trailing, spacing: 4) {
                 HStack {
                     Text("Guacamole")
                     Spacer()
