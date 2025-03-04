@@ -25,6 +25,7 @@ struct AvocadosView: View {
                 .scaleEffect(self.pulsateAnimaton ? 1 : 0.9)
                 .opacity(self.pulsateAnimaton ? 1 : 0.9)
                 .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
+            
             VStack {
                 Text("Avocados".uppercased())
                     .font(.system(size: 42, weight: .bold, design: .serif))
