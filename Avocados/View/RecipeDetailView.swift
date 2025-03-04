@@ -53,13 +53,50 @@ struct RecipeDetailView: View {
                     } //: VSTACK
                     
                     // INSTRUCTIONS
+                    Text("Instructions")
+                        .fontWeight(.bold)
+                        .modifier(TitleModifier())
                     
+                    ForEach(recipe.instructions, id: \.self) { item in
+                        VStack(alignment: .center, spacing: 5) {
+                            Image(systemName: "chevron.down.circle")
+                                .resizable()
+                                .frame(width: 42, height: 42, alignment: .center)
+                                .imageScale(.large)
+                                .font(Font.title.weight(.ultraLight))
+                                .foregroundColor(Color("ColorGreenAdaptive"))
+                            
+                            Text(item)
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                                .font(.system(.body, design: .serif))
+                                .frame(minHeight: 100)
+                        } //: VSTACK
+                    } //: LOOP
                 } //: GROUP
                 .padding(.horizontal, 24)
                 .padding(.vertical, 12)
             } //: VSTACK
         } //: SCROLL
         .edgesIgnoringSafeArea(.top)
+        .overlay {
+            HStack {
+                Spacer()
+                VStack {
+                    Button(action: {
+                        // ACTION
+                    }, label: {
+                        Image(systemName: "chevron.down.circle.fill")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                            .shadow(radius: 4)
+                    }) //: BUTTON
+                    .padding(.trailing, 20)
+                    .padding(.top, 24)
+                    Spacer()
+                } //: BUTTON
+            } //: HSTACK
+        }
     }
 }
 
