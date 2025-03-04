@@ -12,6 +12,8 @@ struct RecipeDetailView: View {
     
     var recipe: Recipe
     
+    @State private var pulsate: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
@@ -90,12 +92,18 @@ struct RecipeDetailView: View {
                             .font(.title)
                             .foregroundColor(Color.white)
                             .shadow(radius: 4)
+                            .opacity(self.pulsate ? 1 : 0.6)
+                            .scaleEffect(self.pulsate ? 1.2 : 0.8, anchor: .center)
+                            .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
                     }) //: BUTTON
                     .padding(.trailing, 20)
                     .padding(.top, 24)
                     Spacer()
                 } //: BUTTON
             } //: HSTACK
+        } //: OVERLAY
+        .onAppear {
+            self.pulsate.toggle()
         }
     }
 }
