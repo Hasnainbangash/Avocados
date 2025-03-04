@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - FACTS DATA
 
-let factData: [Fact] = [
+let factsData: [Fact] = [
     Fact(
       image: "avocado-fact-1",
       content: "Avocado trees contain enzymes that prevent the fruit from ever ripening on the tree, allowing farmers to use the trees as storage devices for up to 7 months after they reach maturity."

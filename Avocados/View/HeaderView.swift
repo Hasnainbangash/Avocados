@@ -66,6 +66,6 @@ struct HeaderView: View {
 // MARK: - PREVIEW
 
 #Preview {
-    HeaderView(header: headerData[1])
+    HeaderView(header: headersData[1])
         .previewLayout(.sizeThatFits)
 }
