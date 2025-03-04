@@ -23,9 +23,9 @@ struct ContentView: View {
                     HStack(alignment: .top, spacing: 0) {
                         ForEach(headers) { item in
                             HeaderView(header: item)
-                        }
+                        } //: LOOP
                     } //: HSTACK
-                }
+                } //: SCROLL
                 
                 // MARK: - DISHES
                 Text("Avocado Dishes")
