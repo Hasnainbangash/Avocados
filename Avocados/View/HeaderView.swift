@@ -10,7 +10,13 @@ import SwiftUI
 struct HeaderView: View {
     // MARK: - PROPERTIES
     
+    @State private var showHeadline: Bool = false
     
+    var slideInAnimation: Animation {
+        Animation.spring(response: 1.5, dampingFraction: 0.5, blendDuration: 0.5)
+            .speed(1)
+            .delay(0.25)
+    }
     
     // MARK: - BODY
     
@@ -45,7 +51,11 @@ struct HeaderView: View {
                 .background(Color("ColorBlackTransparentLight"))
             } //: HSTACK
             .frame(width: 285, height: 105, alignment: .center)
-            .offset(x: -66, y: 75)
+            .offset(x: -66, y: showHeadline ? 75 : 220)
+            .animation(slideInAnimation)
+            .onAppear {
+                self.showHeadline.toggle()
+            }
         } //: ZSTACK
         .frame(width: 480, height: 320, alignment: .center)
     }
