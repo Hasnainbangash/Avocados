@@ -12,7 +12,6 @@ struct RecipeCardView: View {
     
     var recipe: Recipe
     var hapticImpact = UIImpactFeedbackGenerator(style: .heavy)
-    
     @State private var showModal: Bool = false
     
     // MARK: - BODY
