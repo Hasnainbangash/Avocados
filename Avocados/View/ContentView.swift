@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - PROPERTIES
+    
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
@@ -15,7 +21,8 @@ struct ContentView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 0) {
-                        HeaderView()
+                        // HeaderView()
+                        Text("Headers")
                     } //: HSTACK
                 }
                 
@@ -42,6 +49,8 @@ struct ContentView: View {
         .padding(0)
     }
 }
+
+// MARK: - PREVIEW
 
 #Preview {
     ContentView()
