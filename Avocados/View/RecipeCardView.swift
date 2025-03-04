@@ -14,7 +14,7 @@ struct RecipeCardView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             // CARD IMAGE
             Image(recipe.image)
                 .resizable()
@@ -50,11 +50,37 @@ struct RecipeCardView: View {
                     .italic()
                 
                 // RATES
+                HStack(alignment: .center, spacing: 5) {
+                    ForEach(1...(recipe.rating), id: \.self) { _ in
+                        Image(systemName: "star.fill")
+                            .font(.body)
+                            .foregroundColor(Color.yellow)
+                    }
+                } //: HSTACK
+                
                 // COOKING
-            }
+                HStack(alignment: .center, spacing: 12) {
+                    HStack(alignment: .center, spacing: 2) {
+                        Image(systemName: "person.2")
+                        Text("Serves: \(recipe.serves)")
+                    } //: HSTACK
+                    
+                    HStack(alignment: .center, spacing: 2) {
+                        Image(systemName: "clock")
+                        Text("Prep: \(recipe.preparation)")
+                    } //: HSTACK
+                    
+                    HStack(alignment: .center, spacing: 2) {
+                        Image(systemName: "flame")
+                        Text("Cooking: \(recipe.cooking)")
+                    } //: HSTACK
+                } //: HSTACK
+                .font(.footnote)
+                .foregroundColor(Color.gray)
+                
+            } //: VSTACK
             .padding()
             .padding(.bottom, 12)
-            
         } //: VSTACK
         .background(Color.white)
         .cornerRadius(12)
