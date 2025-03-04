@@ -28,7 +28,7 @@ struct AppView: View {
                     Text("Ripening")
                 }
             
-            AvocadosView()
+            SettingsView()
                 .tabItem {
                     Image("tabicon-settings")
                     Text("Settings")

@@ -48,7 +48,8 @@ struct AvocadosView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         )
-        .edgesIgnoringSafeArea(.all)
+        // .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
