@@ -10,6 +10,8 @@ import SwiftUI
 struct AvocadosView: View {
     // MARK: - PROPERTIES
     
+    @State private var pulsateAnimaton: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -20,9 +22,11 @@ struct AvocadosView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 240, height: 240, alignment: .center)
                 .shadow(color: Color("ColorBlackTransparentDark"), radius: 12, x: 0, y: 8)
-            
+                .scaleEffect(self.pulsateAnimaton ? 1 : 0.9)
+                .opacity(self.pulsateAnimaton ? 1 : 0.9)
+                .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
             VStack {
-                Text("Avocados")
+                Text("Avocados".uppercased())
                     .font(.system(size: 42, weight: .bold, design: .serif))
                     .foregroundColor(.white)
                     .padding()
@@ -50,6 +54,9 @@ struct AvocadosView: View {
         )
         // .edgesIgnoringSafeArea(.all)
         .edgesIgnoringSafeArea(.top)
+        .onAppear {
+            self.pulsateAnimaton.toggle()
+        }
     }
 }
 
