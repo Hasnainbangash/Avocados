@@ -19,7 +19,7 @@ struct RecipeCardView: View {
             Image(recipe.image)
                 .resizable()
                 .scaledToFit()
-                .overlay {
+                .overlay (
                     HStack {
                         Spacer()
                         VStack {
@@ -33,7 +33,28 @@ struct RecipeCardView: View {
                             Spacer()
                         } //: VSTACK
                     } //: HSTACK
-                }
+                )
+            
+            VStack(alignment: .leading, spacing: 12) {
+                // TITLE
+                Text(recipe.title)
+                    .font(.system(.title, design: .serif))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("ColorGreenMedium"))
+                    .lineLimit(1)
+                
+                // HEADLINE
+                Text(recipe.headline)
+                    .font(.system(.body, design: .serif))
+                    .foregroundColor(Color.gray)
+                    .italic()
+                
+                // RATES
+                // COOKING
+            }
+            .padding()
+            .padding(.bottom, 12)
+            
         } //: VSTACK
         .background(Color.white)
         .cornerRadius(12)
