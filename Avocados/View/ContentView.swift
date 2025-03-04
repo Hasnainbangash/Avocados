@@ -11,6 +11,13 @@ struct ContentView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
+                // MARK: - HEADER
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 0) {
+                        HeaderView()
+                    } //: HSTACK
+                }
                 
                 // MARK: - FOOTER
                 
@@ -31,6 +38,8 @@ struct ContentView: View {
                 .padding(.bottom, 85)
             } //: VSTACK
         } //: SCROLL
+        .edgesIgnoringSafeArea(.all)
+        .padding(0)
     }
 }
 
