@@ -48,10 +48,12 @@ struct RipeningView: View {
                     )
                 
                 // DESCRIPTION
+                Spacer()
                 Text("Fresh off the tree, the avocado is ery hard with no give")
                     .foregroundColor(Color("ColorGreenDark"))
                     .fontWeight(.bold)
                     .lineLimit(nil)
+                Spacer()
                 
                 // RIPENESS
                 Text("5+ DAYS")
@@ -75,7 +77,7 @@ struct RipeningView: View {
                     .fontWeight(.bold)
                     .lineLimit(3)
                     .frame(width: 160)
-                
+                Spacer()
             } //: VSTACK
             .zIndex(0)
             .multilineTextAlignment(.center)
