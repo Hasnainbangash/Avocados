@@ -18,7 +18,18 @@ struct RipeningView: View {
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
                 .clipShape(Circle())
+                .background(
+                    Circle()
+                        .fill(Color("ColorGreenLight"))
+                        .frame(width: 110, height: 110, alignment: .center)
+                )
+                .background(
+                    Circle()
+                        .fill(Color("ColorAppearanceAdaptive"))
+                        .frame(width: 120, height: 120, alignment: .center)
+                )
                 .zIndex(1)
+                .offset(y: 55)
             
             VStack(alignment: .center, spacing: 10) {
                 // STAGE
@@ -32,6 +43,8 @@ struct RipeningView: View {
                         .fontWeight(.heavy)
                 } //: VSTACK
                 .foregroundColor(Color("ColorGreenMedium"))
+                .padding(.top, 65)
+                .frame(width: 180)
                 
                 // TITLE
                 Text("HARD")
