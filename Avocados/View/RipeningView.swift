@@ -109,7 +109,7 @@ struct RipeningView: View {
     }
 }
 
-// MARK: - REVIEW
+// MARK: - PREVIEW
 
 #Preview {
     RipeningView()
