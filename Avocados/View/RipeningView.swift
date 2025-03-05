@@ -10,6 +10,8 @@ import SwiftUI
 struct RipeningView: View {
     // MARK: - PROPERTIES
     
+    @State private var slideInAnimation: Bool = false
+    
     // MARK: - BODY
     
     var body: some View {
@@ -29,7 +31,8 @@ struct RipeningView: View {
                         .frame(width: 120, height: 120, alignment: .center)
                 )
                 .zIndex(1)
-                .offset(y: 55)
+                .animation(Animation.easeInOut(duration: 1))
+                .offset(y: slideInAnimation ? 55 : -55)
             
             VStack(alignment: .center, spacing: 10) {
                 // STAGE
@@ -100,6 +103,9 @@ struct RipeningView: View {
             .cornerRadius(20)
         } //: VSTACK
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            self.slideInAnimation.toggle()
+        }
     }
 }
 
